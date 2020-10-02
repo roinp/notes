@@ -1,0 +1,47 @@
+.first {
+    width: 150px;
+    color: blueviolet;
+    vertical-align: top;
+}
+
+.second {
+    width: 20px;
+    background-color: blueviolet;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.third { 
+    width: 300px;
+    background-color: yellowgreen;
+    text-align: center;
+    size: 0mm;
+    font-family: fantasy;
+}
+
+.fourth {
+    width: 30px;
+    background-color: gold ;
+}
+
+.save {
+    text-align: center;
+    background-color: darkolivegreen;
+    color: cyan;
+}
+
+.textarea {
+    resize: none;
+}
+
+.first ul p {
+    margin: 0;
+}
+ button {
+    border-radius: 5px;
+    font-size: initial;
+    font-family: unset;
+    animation: linear;
+    .first ul li {
+    cursor: pointer;
+}
+
