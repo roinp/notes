@@ -40,8 +40,12 @@
     border-radius: 5px;
     font-size: initial;
     font-family: unset;
-    animation: linear;
+ }  
     .first ul li {
     cursor: pointer;
+}
+.first ul {
+    display: flex;
+    flex-direction: column-reverse;
 }
 

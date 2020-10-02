@@ -1,9 +1,10 @@
-
+let selected = null;
 const notes = document.getElementById('notes');
 const note = document.getElementById('note');
 const save = document.getElementById('save');
 const date = document.getElementById('date1');
 const add = document.getElementById('add');
+const del = document.getElementById('delete'); 
  
 date.textContent = getCurrentDate();
 
@@ -31,6 +32,7 @@ function getCurrentDate(short = false){
     note.value = ""
     note.setAttribute('disabled', true);
     note.removeAttribute('placeholder');
+    save.setAttribute('disabled',true);
  }
  
 function addNote(){
@@ -54,6 +56,11 @@ function addNote(){
     
     notes.appendChild(li);
 
+    if(selected !==null){
+        selected.remove();
+    }
+
+
 }
 
 save.addEventListener('click', function(){
@@ -63,6 +70,7 @@ save.addEventListener('click', function(){
 } ) 
 
 add.addEventListener('click',function(){
+    selected = null;
     activateTextarea();
 });
  
@@ -70,6 +78,21 @@ function editNote(event){
   const text = event.currentTarget.children[2].textContent;
     note.value = text;
     activateTextarea();
-}
- 
+    selected = event.currentTarget;
 
+}
+ del.addEventListener('click', function(){
+     if(selected !== null){
+         selected.remove();
+         console.log(selected);
+         clearTextarea();
+     }
+ })
+
+note.addEventListener('keyup', function(){
+    if(note.value ==""){
+        save.setAttribute('disabled',true);
+    }else{
+        save.removeAttribute('disabled');
+    }
+})
